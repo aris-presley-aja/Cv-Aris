@@ -1,116 +1,154 @@
 export default {
-  // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
-  
-
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  /*
+   ** Nuxt rendering mode
+   ** See https://nuxtjs.org/api/configuration-mode
+   */
+  mode: "universal",
+  /*
+   ** Headers of the page
+   ** See https://nuxtjs.org/api/configuration-head
+   */
   head: {
-    title: 'Aris Priyanto - Frontend Web Developer',
-    htmlAttrs: {
-      lang: 'en',
-    },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          'Aris Priyanto is a Web Developer from Jakarta, Indonesia. After working as a freelancer for the past 3+ years, he is proficient at both frontend and backend development, but mostly im more like to work on Frontend.',
-      },
-      {
-        hid: 'keywords',
-        name: 'keywords',
-        content:
-          'Aris, Aris Priyanto, Jakarta, Frontend, Web Developer, PHP, JavaScript, Freelancer, Programmer, , Software Developer',
-      },
-      {
-        hid: 'author',
-        name: 'author',
-        content: 'Aris Priyanto',
-      },
-      { name: 'format-detection', content: 'telephone=no' },
-    ],
-    link: [
-      {
-        rel: 'apple-touch-icon',
-        sizes: '180x180',
-        href: '/apple-touch-icon.png',
-      },
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '32x32',
-        href: '/favicon-32x32.png',
-      },
-      {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '32x32',
-        href: '/favicon-16x16.png',
-      },
-      {
-        rel: 'manifest',
-        href: '/site.webmanifest',
-      },
-    ],
+    title: process.env.npm_package_name || "",
     script: [
       {
-        // hid: 'tawk.to',
-        // src: 'https://embed.tawk.to/60ef6018d6e7610a49ab51bb/1fajguo58',
-        // defer: true,
-        crossorigin: '*',
+        src:
+          "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/solid.min.js"
       },
+      { src: "https://code.jquery.com/jquery-3.2.1.slim.min.js" },
+      {
+        src:
+          "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      },
+      {
+        src:
+          "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      }
     ],
+    meta: [
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        hid: "description",
+        name: "description",
+        content: process.env.npm_package_description || ""
+      }
+    ],
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href:
+          "https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900"
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href:
+          "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href:
+          "https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css"
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href:
+          "https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href:
+          "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css",
+        integrity:
+          "sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB",
+        crossorigin: "anonymous"
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "https://use.fontawesome.com/releases/v5.1.0/css/all.css",
+        integrity:
+          "sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt",
+        crossorigin: "anonymous"
+      }
+    ]
   },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['@/scss'],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
-    '@nuxtjs/svg-sprite',
-    '@nuxtjs/google-analytics',
+  /*
+   ** Global CSS
+   */
+  css: ["@/assets/css/resume.css"],
+  /*
+   ** Plugins to load before mounting the App
+   ** https://nuxtjs.org/guide/plugins
+   */
+  plugins: [
+    { src: "~plugins/swiper.js", ssr: false },
+    { src: "~/plugins/vueTyper.js", ssr: false }
   ],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
+  /*
+   ** Nuxt.js dev-modules
+   */
+  buildModules: ["@nuxtjs/style-resources", "@nuxtjs/color-mode"],
+  styleResources: {
+    // your settings here
+    scss: ["'./assets/scss/*.scss'", "./assets/scss/resume.scss"]
+  },
+  /*
+   ** Nuxt.js modules
+   */
   modules: [
-    // https://go.nuxtjs.dev/content
-    '@nuxt/content',
-    '@nuxtjs/sitemap',
-  ],
-
-  // Sitemap module options: https://sitemap.nuxtjs.org/guide/configuration
-  sitemap: {
-    hostname: 'https://vercel.com/aris-presley-aja/',
-    gzip: true,
-    routes: [
-      '/codefolio',
-      '/wid-blog-frontend',
-      '/habitly',
-      '/0xfolio',
-      '/react',
-      '/kotlin',
-      '/dream-flowers-design',
+    [
+      "nuxt-i18n",
+      {
+        /* module options */
+      }
     ],
+
+    ["@nuxtjs/style-resources"]
+  ],
+  i18n: {
+    locales: ["en", "es"],
+    defaultLocale: "en",
+    vueI18n: {
+      fallbackLocale: "en",
+      messages: {
+        en: require("./locales/en.json"),
+        es: require("./locales/es.json")
+      }
+    }
   },
+  loading: { color: "#3B8070" },
+  /*
+   ** Build configuration
+   ** See https://nuxtjs.org/api/configuration-build/
+   */
+  build: {
+    /*
+     ** Run ESLint on save
+     */
+    extend(config, { isDev, isClient }) {
+      if (isDev && isClient) {
+        const vueLoader = config.module.rules.find(
+          ({ loader }) => loader === "vue-loader"
+        );
+        const {
+          options: { loaders }
+        } = vueLoader || { options: {} };
+        if (loaders) {
+          for (const loader of Object.values(loaders)) {
+            //changeLoaderOptions(Array.isArray(loader) ? loader : [loader]);
+          }
+        }
+        //config.module.rules.forEach(rule => changeLoaderOptions(rule.use));
+        // console.log(util.inspect(config.module.rules, { depth: 6 }))
+      }
+    }
+  }
+};
 
-  // @nuxtjs/google-analytics configs, https://google-analytics.nuxtjs.org/setup/
-  googleAnalytics: {
-    id: 'UA-109228988-3',
-  },
-
-  // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
-}
