@@ -1,0 +1,20 @@
+{
+  "id": 2,
+  "title": "React Certificate",
+  "description": "A ReactJs Todo List .",
+  "image": "task.png",
+  "links": {
+    "liveDemo": "https://r-task-aris-presley-aja.vercel.app//"
+  },
+  "technologies": [
+    "material-ui",
+    "CSS",
+    "SCSS",
+    "Bootstrap",
+    "JavaScript",
+    "testing-library",
+    "Reactjs",
+    "Redux",
+    "Git"
+  ]
+}

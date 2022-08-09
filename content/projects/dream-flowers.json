@@ -1,0 +1,10 @@
+{
+  "id": 5,
+  "title": "Cripto on React",
+  "description": "A simple result of API.Map.SetState Crypto Currency rendering using Reactjs.",
+  "image": "kripto.png",
+  "links": {
+    "liveDemo": "https://https://react-cryptocurrency-eight.vercel.app/"
+  },
+  "technologies": ["ReactJs", "testing-library", "chart.js", "scss", "bootstrap", "git"]
+}

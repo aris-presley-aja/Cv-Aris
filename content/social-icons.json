@@ -1,0 +1,26 @@
+{
+  "icons": [
+    {
+      "name": "linkedin",
+      "url": "https://www.linkedin.com/in/aris-priyanto/"
+    },
+
+    {
+      "name": "gmail",
+      "url": "mailto:aris.22002.priyanto@gmail.com"
+    },
+    {
+      "name": "phone",
+      "url": "tel:+6281284123979"
+    },
+    {
+      "name": "whatsapp",
+      "url": "https://api.whatsapp.com/send?phone=6281284123979"
+    },
+
+    {
+      "name": "github",
+      "url": "https://github.com/aris-presley-aja"
+    }
+  ]
+}
