@@ -1,0 +1,791 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1">   
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+     <title>One Page Resume</title>
+
+     <style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sansita+One);
+  
+  :root {
+     --primary-color: #302AE6;
+     --secondary-color: #536390;
+     --font-color: #424242;
+     --bg-color: #fff;
+     --heading-color: #292922;
+ }
+ 
+ [data-theme="dark"] {
+     --primary-color: #9A97F3;
+     --secondary-color: #818cab;
+     --font-color: #e1e1ff;
+     --bg-color: #161625;
+     --heading-color: #818cab;
+ }
+ 
+ body {
+   font-family: "Lato", sans-serif;
+   background-color: var(--bg-color);
+   color: var(--font-color);
+   max-width: 90%;
+   margin: 0 auto;
+   font-size: calc(1rem + 0.25vh);
+ }
+ 
+ h1 {
+     color: var(--heading-color);
+     font-family: "Sansita One", serif;
+     font-size: 2rem;
+     margin-bottom: 1vh;
+ }
+ 
+ p {
+   font-size: 1.1rem;
+   line-height: 1.1rem;
+ }
+ 
+ a {
+   color: var(--secondary-color);
+   text-decoration: none;
+   border-bottom: 1px solid transparent;
+   font-weight: bold;
+   &:hover, &:focus {
+       border-bottom: 3px solid currentColor;
+   }
+ }
+ img {
+  border-radius: 5%;
+}
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+buttonsround {
+  border-radius: 40%;
+    transform: translate(0%, 50%);
+    background-color: #0062ff;
+}
+ section {
+   max-width: 68%;
+   margin: 0 auto;
+ }
+ 
+ .post-meta {
+   font-size: 1rem;
+   font-style: italic;
+   display: block;
+   margin-bottom: 4vh;
+   color: var(--secondary-color);
+ }
+ 
+ nav {
+   display: flex;
+   justify-content: flex-end;
+   padding: 20px 0;
+ }
+ 
+ /*slider switch css */
+ .theme-switch-wrapper {
+   display: flex;
+   align-items: center;
+   
+   em {
+     margin-left: 10px;
+     font-size: 1rem;
+   }
+ }
+ .theme-switch {
+   display: inline-block;
+   height: 34px;
+   position: relative;
+   width: 60px;
+ }
+ 
+ .theme-switch input {
+   display:none;
+ }
+ 
+ .slider {
+   background-color: #ccc;
+   bottom: 0;
+   cursor: pointer;
+   left: 0;
+   position: absolute;
+   right: 0;
+   top: 0;
+   transition: .4s;
+ }
+ 
+ .slider:before {
+   background-color: #fff;
+   bottom: 4px;
+   content: "";
+   height: 26px;
+   left: 4px;
+   position: absolute;
+   transition: .4s;
+   width: 26px;
+ }
+ 
+ input:checked + .slider {
+   background-color: #66bb6a;
+ }
+ 
+ input:checked + .slider:before {
+   transform: translateX(26px);
+ }
+ 
+ .slider.round {
+   border-radius: 34px;
+ }
+ 
+ .slider.round:before {
+   border-radius: 50%;
+ }
+ /* Card */
+ .card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 10%;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container .btn {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(0%, 0%);
+  -ms-transform: translate(0%, 0%);
+  background-color: #ababab;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: velvet;
+}
+.chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: #717171;
+}
+
+
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+
+  top: 0;
+  background-color: rgb(0, 170, 255);
+  padding: 0.5%;
+  font-size: 10px;
+}
+/* row */
+* {
+  box-sizing: border-box;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the four columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  border-radius: 10%;
+  background-color: inherit;
+  
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: rgb(42, 145, 255);
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+/* modol */
+.modaled {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modaled-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.closeing {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#Home {background-color: rgb(172, 172, 172);}
+#News {background-color: rgb(172, 172, 172);}
+#Contact {background-color: rgb(172, 172, 172);}
+#About {background-color: rgb(172, 172, 172);}
+     </style>
+</head>
+
+<body>
+  <div class="sticky">
+    <table>
+      <td width="50%">
+        <div class="theme-switch-wrapper">
+          <label class="theme-switch" for="checkbox">
+              <input type="checkbox" id="checkbox" />
+              <div class="slider round"></div>
+        </label>
+    
+      </div>
+      
+      <!--  -->
+    
+      <script>
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+    
+      if (currentTheme === 'dark') {
+          toggleSwitch.checked = true;
+      }
+    }
+    
+    function switchTheme(e) {
+      if (e.target.checked) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+      }
+      else {        document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+      }    
+    }
+    
+    toggleSwitch.addEventListener('change', switchTheme, false);
+    
+      </script>
+      <!--  -->
+      </td>
+      <td width="50%">
+        <p align="center"><img /><a class="email" href="mailto:aris.22002.priyanto@gmail.com"><font color="red">email Me</a>
+          <img />|<a class="email" href="mailto:aris.22002.priyanto@gmail.com"><font color="red">Whatsapp</a></p>
+      </td>
+      <td width="100%">
+        <h1 class="fn">Aris Priyanto</h1>
+      </td>
+    </table>
+    
+
+
+
+
+  </div>
+  <div class="container">
+  
+                </div>
+
+    
+        <div id="contact-info" class="vcard">
+        
+            <!-- Microformats! -->
+         
+
+        
+
+        </div>
+                
+
+        
+
+        <dl>
+
+            
+            <dd class="clear"></dd>
+            
+            <button class="tablink" onclick="openPage('Home', this, 'lightblue')">My Experience</button>
+            <button class="tablink" onclick="openPage('News', this, 'lightblue')" id="defaultOpen">Home</button>
+            <button class="tablink" onclick="openPage('Contact', this, 'lightblue')">My Example</button>
+            <button class="tablink" onclick="openPage('About', this, 'lightblue')">My Certificate & Course</button>
+            
+            <div id="Home" class="tabcontent">
+              <h3>Experience</h3>
+              <p>List Of what i had Done & Learn</p>
+            <a><p> 1: Asiasoft Nusantara</a></p>
+
+<p><a>IT Guy (Handling Peripherals,Software Hardware ) Mar 2001 - May 2003 · 4 yrs 3 mos</a></p>
+  <p><a>Greater Jakarta Area, Indonesia Job Desc:</a></p>
+    <p><a>a.	Web Maintenance</a></p>
+      <p><a>b.	Hardware</a></p>
+        <p><a>c.	Data Scanning</a></p>
+          <p><a>d.	Design Graphic</a></p>
+
+            <p><a>2: Sapta Sarana Sejahtera</a></p>
+
+              <p><a>Frontend Javascript</a></p>
+                <p><a> Jun 2004 - May 2007 · 3 yrs 3 mos</a></p>
+                  <p><a>Greater Jakarta Area, Indonesia </a></p>
+                    <p><a>Technology Used</a></p>
+                      <p><a>a.	Java</a></p>
+                        <p><a>b.	Javascript</a></p>
+                          <p><a>c.	Jasper Report</a></p>
+                            <p><a>d.	GlassFish</a></p>
+                              <p><a>e.	Zkoss</a></p>
+                                <p><a>f.	ExtJs/Sencha</a></p>
+
+
+                                  <p><a>Job Desc:</a></p>
+                                    <p><a>g.	Design Web For Templating</a></p>
+                                      <p><a>h.	Get Data From Back End</a></p>
+                                        <p><a>i.	Send Data To Back End</a></p>
+                                          <p><a>j.	Design Graphic</a></p>
+
+
+
+
+
+
+
+
+                                            <p><a>3: Psycomtech</a></p>
+
+                                              <p><a>Frontend Javascript</a></p>
+                                                <p><a>Jun 2008 - Dec 2009 ·1 yrs 3 mos</a></p>
+                                                  <p><a>Greater Jakarta Area, Indonesia </a></p>
+
+                                                    <p><a>Technology Used</a></p>
+                                                      <p><a>a.	Python</a></p>
+                                                        <p><a>b.	Xml</a></p>
+                                                          <p><a>c.	Open ERP (ODOO)</a></p>
+                                                            <p><a>d.	BAZAAR (local Server)</a></p>
+                                                              <p><a>e.	Mysql</a></p>
+
+                                                                <p><a>Job Desc:</a></p>
+                                                                  <p><a>a.	Design XML For Templating</a></p>
+                                                                    <p><a>b.	Get Data From Back End</a></p>
+                                                                      <p><a>c.	Send Data To Back End</a></p>
+
+
+
+                                                                        <p><a>4: Elog.id</a></p>
+                                                                          <p><a>Software DeveloperSoftware Developer</a></p>
+                                                                            <p><a>Using PHP5, Css Js Jquery, Bootstrap, Mysqli, Wordpress, Photoshop On Koni Kota Tangerang Selatan Projects</a></p>
+
+                                                                              <p><a>http://Elog.idhttp://Elog.id Mar 2018 - Jul 2018 · 5 mos Greater Jakarta Area, Indonesia</a></p>
+                                                                                <p><a>fullstack web developer</a></p>
+
+
+                                                                                  <p><a>5: Turangga Aksa Mahadana</a></p>
+                                                                                    <p><a>Application DeveloperApplication Developer</a></p>
+                                                                                      <p><a>Using Wordpress, Photoshop, Php , Mobile Developer turangga aksa mahadana</a></p>
+                                                                                        <p><a>Jun 2019 - Nov 2019 · 6 mos</a></p>
+ 
+                                                                                          <p><a>6: Triklin Rekatama</a></p>
+                                                                                            <p><a>front end developer</a></p>
+                                                                                              <p><a>Vuejs,Php, CodeIgniter 3, Photoshop axios</a></p>
+                                                                                                <p><a>On IBSS PT Telkom Indonesia Located On Jakarta And Bandung Triklin Rekatama · Full-time</a></p>
+                                                                                                  <p><a>Nov 2019 - Jun 2020 · 8 mos Jakarta Metropolitan Area</a></p>
+
+
+
+
+                                                                                                    <p><a>7: PT. Intidata Anugrah Pratama WorkerWorker</a></p>
+                                                                                                      <p><a>Design Web template Using Javascript ,Css,.net On Banking Apps used By Personal Coorporate</a></p>
+                                                                                                        <p><a>PT. Intidata Anugrah Pratama · Contract Jan 2021 - Mar 2021 · 3 mos Jakarta, Indonesia</a></p>
+                                                                                                          <p><a>selesai</a></p>
+
+                                                                                                            <p><a>8: P.T Digital Taruna Indonesia Full Stack Engineer</a></p>
+                                                                                                              <p><a>Design web apps backend database Freelance</a></p>
+                                                                                                                <p><a>P.T Digital Taruna Indonesia Jun 2020 - May 2021 · 1 yr Jakarta Metropolitan Area</a></p>
+
+
+                                                                                                                  <p><a>9: Majapahit Teknologi</a></p>
+
+                                                                                                                    <p><a>Frontend Developer</a></p>
+                                                                                                                      <p><a>Designweb Vuejs Vuex Vuetify axios Tailwind Typescript eslint Contract</a></p>
+                                                                                                                        <p><a>VueJs</a></p>
+                                                                                                                          <p><a>Majapahit Teknologi</a></p>
+                                                                                                                            <p><a>·	Contract May 2021 - Sep 2021 · 5 mos Jakarta, Indonesia</a></p>
+
+
+                                                                                                                              <p><a>10: ON-TRUCKS (PT Phos Tekno)</a></p>
+                                                                                                                                <p><a>Designweb Vuejs Vuex Vuetify axios eslint Frontend Developer</a></p>
+                                                                                                                                  <p><a>VueJs , Gitlab </a></p>
+                                                                                                                                    <p><a>ON-TRUCKS · Full-time Jan 2022 - Present · 5 mos Jakarta, Indonesia</a></p>
+
+            </div>
+            
+            <div id="News" class="tabcontent">
+              <h3>Home</h3>
+              <p align="center">My Bio and etc</p> 
+              <div align="left">
+                <table>
+            <td>
+                  <img class="img" src="images/aris.jpg" alt="Photo of Cthulu" id="pic" />
+            </td>
+                  <td align="right">
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">My-Cv</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modaled">
+
+  <!-- Modal content -->
+  <div class="modaled-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+    <p>
+    <img src="images/cv/0001.jpg" alt="Flowers in Chania" width="100%" height="auto">
+  </p>
+  <p>
+    <img src="images/cv/0002.jpg" alt="Flowers in Chania" width="100%" height="auto">
+  </p>
+  <p>
+    <img src="images/cv/0003.jpg" alt="Flowers in Chania" width="100%" height="auto">
+  </p>
+  <p>
+    <img src="images/cv/0004.jpg" alt="Flowers in Chania" width="100%" height="auto">
+  </p>
+  <p>
+    <img src="images/cv/0005.jpg" alt="Flowers in Chania" width="100%" height="auto">
+  </p>
+  <p>
+    <img src="images/cv/0006.jpg" alt="Flowers in Chania" width="100%" height="auto">
+  </p>
+  <p>
+    <img src="images/cv/0007.jpg" alt="Flowers in Chania" width="100%" height="auto">
+  </p>
+  <p>
+    <img src="images/cv/0008.jpg" alt="Flowers in Chania" width="100%" height="auto">
+  </p>
+  <p>
+    <img src="images/cv/0009.jpg" alt="Flowers in Chania" width="100%" height="auto">
+  </p>
+  </div>
+
+</div>
+<!--  -->
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+  
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+  
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  </script>
+<!--  -->
+                    <dd class="clear"></dd>
+                  <!--  -->
+                    <dt><font color="red">Education</font></dt>
+                    <dd>
+                     <p><a> Name : Aris Priyanto</a></p>
+                    <p> <a> Sex : Men </a></p>
+                    <p> <a>  Birthplace : Jakarta, 5 April 1981</a></p>
+                    <!-- <p> <a> <font color="red">Education :</font>   Smu Walisongo Jepara -->
+                    <p> <a>  Heigth : 171 cm weight : 59 kg</a></p>
+                    <p> <a>  Religion : Islam</a></p>
+                    <p> <a>  Nationality : Indonesia</a></p>
+                    <p> <a>  Residence : Jl Kebon Mangga no 40 rt 002\02 Kebon mangga 4 cipulir Kebayoran Lama</a></p>
+                    <p> <a>  Lama Jakarta Selatan 12230</a></p>
+                    <p> <a>  Phone Number : +6281284123979</a></p>
+                    <p> <a>  Martial status : Married</a></p>
+                    <p> <a>  <font color="red">Education</font> 
+                    <p> <a>  1. Graduate (Elementary school) SDNegeri 03 Pagi Jakarta at Year 1994,
+                    <p> <a>  Certificate.</a></p>
+                    <p> <a>  2. Graduate SLTP 48(Junior high) school Negeri Jakarta at Year 1997,
+                      Certificate.</a></p>
+                    <p> <a>  3. Graduate SMU Walisongo Pecangaan Jepara at year 2000, Certificate.</a></p>
+                    <p> <a>  4. Dropped out at college Semester V At University Budi Luhur</a></p>
+                    <p> <a>  4. Took on My collage again on STTI I-Tech NIIT</a></p>      
+                        <p><strong>Major:</strong> Information System<br />
+                           <strong>Minor:</strong> Frontend Web Developing</p>
+                    </dd>
+                    
+                    <dd class="clear"></dd>
+            </td>  
+            </table>  
+            </div>
+
+              
+              
+
+              
+              <dd class="clear"></dd>
+              
+              <dt>Hobbies</dt>
+              <dd>World Domination, Deep Sea Diving, Murder Most Foul</dd>
+              
+              <dd class="clear"></dd>
+              
+              <dt>References</dt>
+              <dd>Available on request</dd>
+              
+              <dd class="clear"></dd>
+            </div>
+            
+            <div id="Contact" class="tabcontent">
+              <h3>Vuejs</h3>
+
+              <h3 align="center">My Example On VueJs</h3>
+              <div class="row">
+                <div class="column">
+
+                  <div class="card">
+                    <img class="" src="images/kuis.png"  alt="" id="pic" style="width:100%">
+                   <button class="buttonsround"> <a href="https://big-m-aris-presley-aja.vercel.app/">PWA</a> </button>
+                    </div>
+                </div>
+                <div class="column">
+
+                  <img src="images/todo.png"   alt="" id="pic" style="width:100%">
+                  <div class="card"><a href="https://r-task-aris-presley-aja.vercel.app/">ToDo List</a>
+                </div>
+                </div>
+                <!-- <div class="column">
+                  <div class="card"><a href="https://r-task-aris-presley-aja.vercel.app/">ToDo List</a></div>
+                </div> -->
+                <div class="column">
+                  <img class="" src="images/R-Locally.png"  alt="" id="pic" style="width:100%">                  
+                  <div class="card"><a href="r-locally-aris-presley-aja.vercel.app">Template using Local Db </a></div>
+                </div>
+                <div class="column">
+                  <img class="" src="images/kripto.png"  alt="" id="pic" style="width:100%">
+                  <div class="card"><a href="https://react-cryptocurrency-eight.vercel.app/">Crypto Using React </a></div>
+                </div>
+              </div>  
+              
+              <dd class="clear"></dd>
+              <h3>Reactjs</h3>
+              <h3 align="center">My Example On ReactJs</h3>
+             
+              <div class="row">
+                <div class="column">
+
+                  <div class="card">
+                    <img class="" src="images/kuis.png"  alt="" id="pic" style="width:100%">
+                   <button class="buttonsround"> <a href="https://big-m-aris-presley-aja.vercel.app/">PWA</a> </button>
+                    </div>
+                </div>
+                <div class="column">
+
+                  <img src="images/todo.png"   alt="" id="pic" style="width:100%">
+                  <div class="card"><a href="https://r-task-aris-presley-aja.vercel.app/">ToDo List</a>
+                </div>
+                </div>
+                <!-- <div class="column">
+                  <div class="card"><a href="https://r-task-aris-presley-aja.vercel.app/">ToDo List</a></div>
+                </div> -->
+                <div class="column">
+                  <img class="" src="images/R-Locally.png"  alt="" id="pic" style="width:100%">                  
+                  <div class="card"><a href="r-locally-aris-presley-aja.vercel.app">Template using Local Db </a></div>
+                </div>
+                <div class="column">
+                  <img class="" src="images/kripto.png"  alt="" id="pic" style="width:100%">
+                  <div class="card"><a href="https://react-cryptocurrency-eight.vercel.app/">Crypto Using React </a></div>
+                </div>
+              </div> 
+              
+              <dd class="clear"></dd>
+            </div>
+            
+            <div id="About" class="tabcontent">
+              <h3 align="center">Certificate & Course</h3>
+              <div class="row">
+                <div class="column">
+                  <div class="card">Java</div>
+                </div>
+                <div class="column">
+                  <div class="card">Kotlin</div>
+                </div>
+                <div class="column">
+                  <div class="card">ReactJs</div>
+                  <div class="card">ReactJs</div>
+                </div>
+                <div class="column">
+                  <div class="card">Vuejs</div>
+                </div>
+              </div> 
+              
+              <dd class="clear"></dd>
+            </div>
+            <script>
+              function openPage(pageName,elmnt,color) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                  tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablink");
+                for (i = 0; i < tablinks.length; i++) {
+                  tablinks[i].style.backgroundColor = "";
+                }
+                document.getElementById(pageName).style.display = "block";
+                elmnt.style.backgroundColor = color;
+              }
+              
+              // Get the element with id="defaultOpen" and click on it
+              document.getElementById("defaultOpen").click();
+              </script>
+            <dd class="clear"></dd>
+            
+           
+        </dl>
+        
+        <div class="clear"></div>
+    
+    </div>
+
+</body>
+
+</html>
